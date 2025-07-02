@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.min.css">
+  <title>TODO-LIST</title>
+</head>
+
+<body>
+  <header class="header container">
+    <h1 class="title">
+      Мой список ахуенно важных дел
+    </h1>
+  </header>
+  <main>
+    <section class="main-scope container">
+
+      <div class="main-scope__del-wrapper">
+        <button class="main-scope__del-btn hidden" type="button">
+          Удалить <span>1</span>
+        </button>
+        <div class="main-scope__tooltip">
+          <p>
+            Невозможно удалить важную задачу!
+          </p>
+        </div>
+      </div>
+
+      <ul class="main-scope__list">
+        <li class="main-scope__item">
+          <input type="checkbox" class="main-scope__checkbox">
+          <p class="main-scope__desc">
+            Тут будет важное дело 1
+          </p>
+
+          <button type="button" class="main-scope__btn">
+            <svg fill="#212121" fill-rule="nonzero" width="40px" height="40px" viewBox="0 0 24 24" version="1.1"
+              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <path
+                d="M12,17.0015 C13.3813,17.0015 14.5011,18.1213 14.5011,19.5026 C14.5011,20.8839 13.3813,22.0037 12,22.0037 C10.6187,22.0037 9.49888,20.8839 9.49888,19.5026 C9.49888,18.1213 10.6187,17.0015 12,17.0015 Z M11.999,2.00244 C14.1393,2.00244 15.8744,3.7375 15.8744,5.87781 C15.8744,8.71128 14.8844,12.4318 14.339,14.2756 C14.0294,15.322 13.0657,16.0039 12.0006,16.0039 C10.9332,16.0039 9.96846,15.3191 9.65995,14.2708 L9.43749451,13.4935787 C8.88270062,11.4994608 8.12366,8.3311 8.12366,5.87781 C8.12366,3.7375 9.85872,2.00244 11.999,2.00244 Z"
+                id="🎨-Color">
+              </path>
+            </svg>
+          </button>
+        </li>
+        <li class="main-scope__item">
+          <input type="checkbox" class="main-scope__checkbox">
+          <p class="main-scope__desc">
+            Тут будет важное дело 2
+          </p>
+
+          <button type="button" class="main-scope__btn">
+            <svg fill="#212121" fill-rule="nonzero" width="40px" height="40px" viewBox="0 0 24 24" version="1.1"
+              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <path
+                d="M12,17.0015 C13.3813,17.0015 14.5011,18.1213 14.5011,19.5026 C14.5011,20.8839 13.3813,22.0037 12,22.0037 C10.6187,22.0037 9.49888,20.8839 9.49888,19.5026 C9.49888,18.1213 10.6187,17.0015 12,17.0015 Z M11.999,2.00244 C14.1393,2.00244 15.8744,3.7375 15.8744,5.87781 C15.8744,8.71128 14.8844,12.4318 14.339,14.2756 C14.0294,15.322 13.0657,16.0039 12.0006,16.0039 C10.9332,16.0039 9.96846,15.3191 9.65995,14.2708 L9.43749451,13.4935787 C8.88270062,11.4994608 8.12366,8.3311 8.12366,5.87781 C8.12366,3.7375 9.85872,2.00244 11.999,2.00244 Z"
+                id="🎨-Color">
+              </path>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </section>
+    <div class="add container">
+      <button class="add__btn">
+        ДОБАВИТЬ ЗАДАЧУ!
+      </button>
+    </div>
+  </main>
+  <div class="notification">
+    <p>
+      Ваши задачи были удалены ! Вы молодец!
+    </p>
+  </div>
+  <!-- модалка для входа -->
+  <div class="modal modal--auth" id="modal-login">
+    <div class="modal__wrapper">
+      <form class="form" action="https://echo.htmlacademy.ru/" method="post">
+        <h2>
+          ВХОД
+        </h2>
+        <ul>
+          <li>
+            <label class="form__label" for="login"> Login </label>
+            <input class="form__input" type="text" id="login" name="login" required>
+          </li>
+          <li>
+            <label class="form__label" for="password"> Password </label>
+            <input class="form__input" type="password" id="password" name="password" required>
+          </li>
+        </ul>
+        <button class="form__submit" type="submit">
+          Отправить
+        </button>
+      </form>
+    </div>
+  </div>
+  <!-- модалка для задачи -->
+  <div class="modal modal--close  modal--add" id="add">
+    <div class="modal__overlay">
+    </div>
+    <div class="modal__wrapper">
+      <button class="modal__close" type="button" aria-label="Закрыть модальное окно.">
+        x
+      </button>
+      <div class="modal__content">
+        <h2>
+          Добавь новую задачу
+        </h2>
+        <form class="form" action="https://echo.htmlacademy.ru/" method="post">
+          <ul>
+            <li>
+              <label class="form__label" for="name-task"> Название </label>
+              <input class="form__input" type="text" id="name-task" name="name-task" required>
+            </li>
+            <li>
+              <input class="form__checkbox" type="checkbox" id="checkbox-important" name="checkbox-important">
+              <label class="form__label" for="checkbox-important"> Важная задача </label>
+            </li>
+          </ul>
+          <button class="form__submit" type="submit">
+            Отправить
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="./js/script.js"></script>
+</body>
+  
+
+</html>
